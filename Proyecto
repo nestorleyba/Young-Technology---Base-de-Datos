@@ -1,0 +1,150 @@
+create database Autospart ; --
+ use Autospart 
+
+create table Vehiculos 
+(
+    VehiculoId int identity (1,1) primary key,
+    Marca Varchar (50), 
+    Modelo varchar (50)
+);
+ 
+create table Clientes
+(
+    ClienteId int identity(1,1) primary key,
+    Nombre varchar (25),
+    Apellido varchar (25),
+    Tel     int, 
+    Cedula varchar (13),
+);
+
+create table Productos
+(
+ProductoId int identity (1,1) primary key,
+Producto varchar (25),
+Precio varchar (10)
+) 
+
+create table Inventario
+(
+InventarioId int identity (1,1) primary key,
+Producto varchar (25),
+CantidadDisp varchar (10)
+) 
+
+create table Mecanico
+(
+MecanicoId int identity (1,1) primary key,
+NombreMecanico varchar (25),
+CodigoEmpleado varchar (10),
+TrabajoRealizado varchar (50)
+) 
+
+select GETDATE()
+
+   insert Vehiculos (Marca,Modelo) values ('Toyota','Corolla');
+    insert Vehiculos (Marca,Modelo) values ('Honda','Civic');
+    insert Vehiculos (Marca,Modelo) values ('Nissan','Sentra');
+    insert Vehiculos (Marca,Modelo) values ('Hyundai','Tucson');
+    insert Vehiculos (Marca,Modelo) values ('KIA','Sportage');
+    insert Vehiculos (Marca,Modelo) values ('BMW','M5');
+    insert Vehiculos (Marca,Modelo) values ('Mercedes Benz','Clase E');
+    insert Vehiculos (Marca,Modelo) values ('Mazda','CX5');
+    insert Vehiculos (Marca,Modelo) values ('Ford','Escape');
+    insert Vehiculos (Marca,Modelo) values ('Chevrolet','Cruze');
+
+    
+    select * from Vehiculos;
+    select Marca from Vehiculos;
+    select * from Vehiculos where VehiculoId=5;
+    select * from Vehiculos where Marca = 'Toyota';
+    select * from Vehiculos where Marca like 'la %';
+    select * from Vehiculos where Marca like '% re';
+    select * from Vehiculos where Marca like '%ait%';
+
+    select * from Clientes;
+    select nombre from Clientes;
+    select * from Clientes where ClienteId=1;
+    select * from Clientes where nombre = 'Juan';
+    select * from Clientes where nombre like 'la %';
+    select * from Clientes where nombre like '% re';
+    select * from Clientes where nombre like '%ait%';
+
+	select * from Productos;
+    select Producto from Productos;
+    select * from Productos where ProductoId=1;
+    select * from Productos where Producto = '1/4 de aceite';
+    select * from Productos where Producto like 'la %';
+    select * from Productos where Producto like '% re';
+    select * from Productos where Producto like '%ait%';
+
+	select * from Inventario;
+    select Producto from Inventario;
+    select * from Inventario where InventarioId=1;
+    select * from Inventario where Producto = '1/4 de aceite';
+    select * from Inventario where Producto like 'la %';
+    select * from Inventario where Producto like '% re';
+    select * from Inventario where Producto like '%ait%';
+
+	select * from Mecanico;
+    select NombreMecanico from Mecanico;
+    select * from NombreMecanico where MecanicoId=1;
+    select * from NombreMecanico where Mecanico = 'Felipe Mejia';
+    select * from NombreMecanico where Mecanico like 'la %';
+    select * from NombreMecanico where Mecanico like '% re';
+    select * from NombreMecanico where Mecanico like '%ait%';
+
+
+    insert into Clientes (Nombre, Apellido,Tel, Cedula)
+	values               ( 'Juan','Perez', 849333333,'223000345');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Sogel','Brito', 849333333,'00112345678');
+	insert into Clientes (Nombre, Apellido,Tel, Cedula)
+	values               ( 'Liam','Batista', 849333333,'02345678965');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Yluminada','Lopez', 849333333,'40212358263');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Laura','Castellanos', 849333333,'00185231569');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Daniela','Alvarez', 849333333,'40253222687');
+	insert into Clientes (Nombre, Apellido,Tel, Cedula)
+	values               ( 'Jessica','Hidalgo', 849333333,'22312485963');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Julian','Dominguez', 849333333,'03755265896');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Karla','Abreu', 849333333,'40253214022');
+	insert into Clientes (Nombre, Apellido,Tel,Cedula)
+	values               ( 'Ramon','Vallejo', 849333333,'40222000365');
+
+    insert Productos (Producto,Precio) values ('1/4 de Aceite','RD$300');
+    insert Productos (Producto,Precio) values ('Filtro de aceite','RD$250');
+    insert Productos (Producto,Precio) values ('Filtro de aire','RD$450');
+    insert Productos (Producto,Precio) values ('Gomas','RD$2,800');
+    insert Productos (Producto,Precio) values ('Coolant','RD$700');
+    insert Productos (Producto,Precio) values ('Bandas de freno','RD$1,250');
+    insert Productos (Producto,Precio) values ('Liquido de freno','RD$295');
+    insert Productos (Producto,Precio) values ('Hidráulico','RD$325');
+    insert Productos (Producto,Precio) values ('Bujías','RD$1,600');
+    insert Productos (Producto,Precio) values ('Batería','RD$5,600');
+
+	insert Inventario (Producto,CantidadDisp) values ('1/4 de Aceite',147);
+    insert Inventario (Producto,CantidadDisp) values ('Filtro de aceite',43);
+    insert Inventario (Producto,CantidadDisp) values ('Filtro de aire',94);
+    insert Inventario (Producto,CantidadDisp) values ('Gomas',77);
+    insert Inventario (Producto,CantidadDisp) values ('Coolant',113);
+    insert Inventario (Producto,CantidadDisp) values ('Bandas de freno',23);
+    insert Inventario (Producto,CantidadDisp) values ('Liquido de freno',69);
+    insert Inventario (Producto,CantidadDisp) values ('Hidráulico',85);
+    insert Inventario (Producto,CantidadDisp) values ('Bujías',124);
+    insert Inventario (Producto,CantidadDisp) values ('Batería',36);
+
+
+	insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Felipe Mejia',1001,'Cambio de aceite');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Ramon Martinez',1521,'Instalacion de gomas');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Santo De Los Santos',3707,'Cambio de Bujias');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Pedro Rodriguez',1038,'Mecanica Ligera');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Julio Astacio',1123,'Cambio de aceite');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Candido Lopez',2322,'Cambio bandas de freno');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Raul Perez',1169,'Cambio de gomas');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Luis Gutierrez',1285,'Mantenimiento de A/C');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Manuel Herrera',2124,'Mantenimiento general');
+    insert Mecanico (NombreMecanico,CodigoEmpleado,TrabajoRealizado) values ('Federico Esteves',2236,'Brillado de Pantallas');
